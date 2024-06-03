@@ -71,8 +71,7 @@ def start():
         "https://youtube.com/@shortsmine99?si=D1hZF6-SkiKF6TZB",
         "https://youtube.com/@factbeast90?si=BO_mX7_mkWVxfARy",
         "https://youtube.com/@the_fact?si=PECJUh3vttGA9qhn"
-    ]
-    uploaded_links_file = 'uploadedlinks.txt'    
+    ]    
     random_channel_link = random.choice(channel_links)
     print(f"Selected channel link: {random_channel_link}\n")
     short_videos = get_short_videos(random_channel_link)
@@ -96,7 +95,8 @@ def start():
     else:
         print("No short videos found.")
         start()
-        
+
+uploaded_links_file = 'uploadedlinks.txt'            
 USERNAME, PASSWORD = take_username_password_input()
 session_file = 'session.json'
 
