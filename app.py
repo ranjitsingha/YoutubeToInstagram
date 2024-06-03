@@ -69,7 +69,8 @@ def read_from_file(filename):
 def start():    
     channel_links = [
         "https://youtube.com/@shortsmine99?si=D1hZF6-SkiKF6TZB",
-        "https://youtube.com/@theailearning?si=M4f1IWJwvLeNVf7e"
+        "https://youtube.com/@factbeast90?si=BO_mX7_mkWVxfARy",
+        "https://youtube.com/@the_fact?si=PECJUh3vttGA9qhn"
     ]
     uploaded_links_file = 'uploadedlinks.txt'    
     random_channel_link = random.choice(channel_links)
