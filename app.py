@@ -14,7 +14,7 @@ def take_username_password_input():
     password = input("Enter your Instagram password: ")
     return username, password        
 
-def get_short_videos(channel_link, num_videos=30):
+def get_short_videos(channel_link, num_videos=20):
     try:
         response = requests.get(channel_link)
         response.raise_for_status()
@@ -41,8 +41,10 @@ def downloadyoutubeshorts(video_url):
         return None 
     
 def uploadtoinstagram(videopath):
-    print("Uploading to Instagram")  
-    caption = "Interesting Facts 🤯 #trendingnow #trendingaudio #trendingnews #instagood #viral #gk #sciencefact #tech #techfact"     
+    print("Uploading to Instagram") 
+    filename = os.path.basename(videopath)
+    title = os.path.splitext(filename)[0] 
+    caption = f"{title} #trendingnow #trendingaudio #trendingnews #instagood #viral #gk #sciencefact #tech #techfact"     
     upload = cl.clip_upload(
         videopath,
         caption=caption, 
@@ -72,7 +74,10 @@ def start():
     channel_links = [
         "https://youtube.com/@shortsmine99?si=D1hZF6-SkiKF6TZB",
         "https://youtube.com/@factbeast90?si=BO_mX7_mkWVxfARy",
-        "https://youtube.com/@the_fact?si=PECJUh3vttGA9qhn"
+        "https://youtube.com/@facthube?si=IoHW9tkAr4YTaoqN",
+        "https://youtube.com/@factverseofficial?si=BDmB7DhcBKbBAydl"
+        "https://youtube.com/@5minfact?si=y966HNGCQz_I8vpA",
+        "https://youtube.com/@rajaneditz?si=aChrLjfFEACB7Yk8"
     ]    
     random_channel_link = random.choice(channel_links)
     print(f"Selected channel link: {random_channel_link}\n")
