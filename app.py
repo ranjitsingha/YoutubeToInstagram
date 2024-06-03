@@ -14,7 +14,7 @@ def take_username_password_input():
     password = input("Enter your Instagram password: ")
     return username, password        
 
-def get_short_videos(channel_link, num_videos=20):
+def get_short_videos(channel_link, num_videos=25):
     try:
         response = requests.get(channel_link)
         response.raise_for_status()
@@ -77,7 +77,11 @@ def start():
         "https://youtube.com/@facthube?si=IoHW9tkAr4YTaoqN",
         "https://youtube.com/@factverseofficial?si=BDmB7DhcBKbBAydl"
         "https://youtube.com/@5minfact?si=y966HNGCQz_I8vpA",
-        "https://youtube.com/@rajaneditz?si=aChrLjfFEACB7Yk8"
+        "https://youtube.com/@rajaneditz?si=aChrLjfFEACB7Yk8",
+        "https://youtube.com/@haiderahmad?si=7_zqIB00MWaAkffu",
+        "https://youtube.com/@mohityadavvlogs2.0?si=Dwol3tgbjuRLwOQa",
+        "https://youtube.com/@golufactsofficial?si=3bxiTNtnBWYa6xi_"
+        
     ]    
     random_channel_link = random.choice(channel_links)
     print(f"Selected channel link: {random_channel_link}\n")
