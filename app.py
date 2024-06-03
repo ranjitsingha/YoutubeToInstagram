@@ -32,7 +32,7 @@ def downloadyoutubeshorts(video_url):
         stream = yt.streams.get_highest_resolution()
         if stream:
             video_title = stream.title
-            print(f"Downloading ... {video_url}")
+            print(f"Downloading ...")
             path = stream.download()
             return path            
         else:
@@ -49,10 +49,12 @@ def uploadtoinstagram(videopath):
         location=None
     )    
     print("Video upload successful")
-    save_to_file(uploaded_links_file, random_short_video)
+    save_to_file(uploaded_links_file, videopath)
     print("Saved link to uploadedlinks list")
     os.remove(videopath)
-    print("Sleeping")   
+    os.remove(videopath + ".jpg")   
+    print("Removed uploaded files from local")
+    print("Sleeping")
     
 def save_to_file(filename, data):
     with open(filename, 'a') as file:
@@ -77,7 +79,7 @@ def start():
     short_videos = get_short_videos(random_channel_link)
     if short_videos:
         random_short_video = random.choice(short_videos)
-        print(f"Selected short video link: {random_short_video}")
+        print(f"Selected shorts link: {random_short_video}")
         if random_short_video not in read_from_file(uploaded_links_file):           
             try:
                 videopath = downloadyoutubeshorts(random_short_video)
